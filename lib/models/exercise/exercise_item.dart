@@ -1,14 +1,14 @@
 //運動の記録を入力するために変数を設定する
 class ExerciseItem {
-  final String exercise;
-  final DateTime date;
-  final bool isComplete;
-
   ExerciseItem({
     required this.exercise,
     required this.date,
     this.isComplete = false,
   });
+
+  final String exercise;
+  final DateTime date;
+  final bool isComplete;
 
   ExerciseItem copyWith({
     String? exercise,

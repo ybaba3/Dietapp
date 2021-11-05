@@ -3,13 +3,12 @@ import 'package:provider/provider.dart';
 
 import '../../models/models.dart';
 import 'empty_exercise_screen.dart';
-import 'exercise_item_screen.dart';
 
 //exercise_body_screen.dartを呼び出してFloatingActionButtonを加えた画面を作ります
 class Exercise extends StatelessWidget {
   const Exercise({Key? key}) : super(key: key);
 
-  get exerciseItems => null;
+  String? get exerciseItems => null;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class Exercise extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          final manager = Provider.of<ExerciseManager>(context, listen: false);
+          /*final manager = Provider.of<ExerciseManager>(context, listen: false);
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -29,7 +28,7 @@ class Exercise extends StatelessWidget {
                 onUpdate: (item) {},
               ),
             ),
-          );
+          );*/
         },
       ),
       body: buildBody(),
