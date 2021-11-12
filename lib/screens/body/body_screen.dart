@@ -2,7 +2,7 @@ import 'package:dietapp4/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'body_item_screen.dart';
+import '../../models/models.dart';
 import 'empty_body_screen.dart';
 
 //empty_body_screen.dartを呼び出してFloatingActionButtonを加えた画面を作ります
@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          final manager = Provider.of<BodyManager>(context, listen: false);
+          /*final manager = Provider.of<BodyManager>(context, listen: false);
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -26,7 +26,7 @@ class Body extends StatelessWidget {
                   },
                   onUpdate: (item) {}),
             ),
-          );
+          );*/
         },
       ),
       body: buildBody(),

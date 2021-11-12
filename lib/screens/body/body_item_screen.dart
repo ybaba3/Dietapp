@@ -11,6 +11,24 @@ class BodyItemScreen extends StatefulWidget {
   final BodyItem? originalItem;
   final bool isUpdating;
 
+  /*static MaterialPage page({
+    BodyItem? item,
+    int index = -1,
+    required Function(BodyItem) onCreate,
+    required Function(BodyItem, int) onUpdate,
+  }) {
+    return MaterialPage(
+      name: BodyPages.bodyItemDetails,
+      key: ValueKey(DietappPages.bodyItemDetails),
+      child: BodyItemScreen(
+        originalItem: item,
+        index: index,
+        onCreate: onCreate,
+        onUpdate: onUpdate,
+        ),
+    );
+  }*/
+
   const BodyItemScreen({
     Key? key,
     required this.onCreate,
@@ -58,7 +76,21 @@ class _BodyItemScreenState extends State<BodyItemScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
-            onPressed: () {}, //後ほど保存ボタンを設定します。
+            onPressed: () {
+              final bodyItem = BodyItem(
+                weight: _weight,
+                date: DateTime(
+                  _binputDate.year,
+                  _binputDate.month,
+                  _binputDate.day,
+                ),
+              );
+              if (widget.isUpdating) {
+                widget.onUpdate(bodyItem);
+              } else {
+                widget.onCreate(bodyItem);
+              }
+            },
           )
         ],
         elevation: 0.0,

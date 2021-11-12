@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../../models/models.dart';
 import 'empty_food_screen.dart';
-import 'food_item_screen.dart';
 
 //food_body_screen.dartを呼び出してFloatingActionButtonを加えた画面を作ります
 class Food extends StatelessWidget {
@@ -15,7 +14,7 @@ class Food extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          final manager = Provider.of<FoodManager>(context, listen: false);
+          /*final manager = Provider.of<FoodManager>(context, listen: false);
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -26,7 +25,7 @@ class Food extends StatelessWidget {
                   },
                   onUpdate: (item) {}),
             ),
-          );
+          );*/
         },
       ),
       body: buildBody(),
